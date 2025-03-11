@@ -1,0 +1,215 @@
+
+/* 媒体查询：小屏幕调整字体大小 */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* 小屏幕下减小字体 */
+    }
+
+    .about-me-section {
+        flex-direction: column; /* 小屏幕改为纵向排列 */
+        align-items: center; /* 居中对齐 */
+    }
+
+    .about-me-section img {
+        margin-bottom: 1em; /* 图片和文字之间留出间距 */
+        width: 70%; /* 图片宽度调整为 50% */
+    }
+
+    .about-me-section_text {
+        text-align: center; /* 文本居中对齐 */
+    }
+}
+
+/* 媒体查询：更大屏幕调整字体大小 */
+@media (min-width: 769px) {
+    body {
+        font-size: 16px; /* 默认或中等屏幕 */
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px; /* 大屏幕下适当放大字体 */
+    }
+}
+
+h1,h2,h3{
+    text-align: center; /* 文本居中对齐 */
+    font-family: "Inter";
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 确保页面整体高度正确 */
+    background: #000; /* 黑色背景 */
+    color: white;
+    font-family: "Inter";
+}
+
+/* 限定粒子背景到 particle_effects_area */
+.particle_effects_area {
+    position: relative;
+    width: 100%; /* 占满页面宽度 */
+    height: auto; /* 高度自适应内容 */
+    background: #000; /* 背景为黑色 */
+    overflow: hidden; /* 隐藏超出区域的粒子效果 */
+    margin: 0;
+}
+
+/* 粒子背景层 */
+.particle_effects_area .particle-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 确保粒子背景在内容下层 */
+    overflow: hidden;
+}
+
+.particle_effects_area .particle-background span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #00ffcc;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: moveParticles 8s linear infinite;
+}
+
+/* 仅影响粒子区域的动画 */
+@keyframes moveParticles {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* 头部背景和名字部分样式 */
+#my_name_and_head_background {
+    position: relative;
+    z-index: 1; /* 确保内容在粒子背景上层 */
+    color: white;
+    text-align: center;
+    padding-top: 1em; /* 增加上下间距 */
+}
+
+/* 关于我部分样式 */
+.particle_effects_area .about-me-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    margin: 3em auto;
+    width: 75%;
+    color: white;
+    z-index: 1; /* 确保文字内容在粒子背景上 */
+    position: relative;
+}
+
+.particle_effects_area .about-me-section img {
+    width: 30%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.particle_effects_area .about-me-section_text {
+    flex: 1;
+    text-align: left;
+}
+
+/*名字文件等内容*/
+.header_content{
+    text-align: center;
+    padding-top: 1em;
+}
+
+.header_content h1 {
+    font-size: 2.8em;
+}
+
+.header_content a {
+    color: white ;
+}
+
+
+/* About Me section 的样式 */
+.about-me-section {
+    display: flex; /* 使用 flex 布局 */
+    width: 75%; /* 宽度为 80% */
+    margin: 0 auto; /* 水平居中，并左右居中对齐 */
+    padding-left: 10%; /* 左边距为 10% */
+    padding-right: 10%; /* 右边距为 10% */
+    margin-bottom: 2em; /* 留出一些空间 */
+    margin-top: 3em;
+}
+
+
+.about-me-section img {
+    flex-shrink: 0; /* 防止图片随容器缩放 */
+    width: 30%; /* 设置图片宽度为 30% */
+    max-width: 200px; /* 限制图片的最大宽度 */
+    height: auto; /* 高度按比例调整 */
+    margin: 0;
+}
+
+.about-me-section_text {
+    flex: 1; /* 文本部分占据剩余空间 */
+    text-align: left; /* 文本左对齐 */
+}
+
+.less_margin_bottom{
+    margin-bottom: 0;
+    line-height: 0;
+    padding-bottom: 0;
+}
+
+.about-me-section div{
+    flex-direction: column; /* 垂直排列子元素 */
+}
+
+.about-me-section h2{
+    text-align: left; /* 文字靠左对齐 */
+    line-height: 0.4em;
+    padding-left: 5%; /* 左边距为 10% */
+}
+
+.about-me-section p {
+    text-align: left; /* 文字靠左对齐 */
+    line-height: 1.5em;
+    padding-left: 5%; /* 左边距为 10% */
+}
+
+/* 媒体查询：小屏幕调整布局 */
+@media (max-width: 768px) {
+
+    .about-me-section {
+        flex-direction: column; /* 小屏幕改为纵向排列 */
+        align-items: center; /* 居中对齐 */
+    }
+
+    .about-me-section img {
+        margin-bottom: 1em; /* 图片和文字之间留出间距 */
+        width: 70%; /* 图片宽度调整为 50% */
+    }
+
+}
+
+
+.skill_language_area {
+    display: flex;
+    width: 80%;
+    margin: 0 auto; /* 水平居中，并左右居中对齐 */
+    padding-left: 10%; /* 左边距为 10% */
+    padding-right: 10%; /* 右边距为 10% */
+    margin-bottom: 2em; /* 留出一些空间 */
+}
+
+.three_equal_block {
+    width: 30%;
+    margin: 3%;
+}
